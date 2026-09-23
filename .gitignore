@@ -1,0 +1,15 @@
+# Agent Zero project files
+.a0proj/
+
+# Development/design files
+stitch_pages/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
