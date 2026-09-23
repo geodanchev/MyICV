@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>AI Projects - Georgi Danchev | CV</title>
+  <meta name="description" content="Selected AI projects by Georgi Danchev - Enterprise AI Assistant, Conversational AI, Graph RAG, and AI-Powered Development Tools.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#dde2f1",
+            "primary": "#4cd7f6",
+            "surface-tint": "#4cd7f6",
+            "on-tertiary-container": "#00452e",
+            "on-primary-fixed-variant": "#004e5c",
+            "surface-container-lowest": "#080e18",
+            "secondary-container": "#00f1fd",
+            "surface-variant": "#2f3540",
+            "on-secondary-container": "#006a6f",
+            "outline": "#869397",
+            "surface-container-high": "#242a35",
+            "primary-fixed": "#acedff",
+            "surface-container-highest": "#2f3540",
+            "surface-container-low": "#161c26",
+            "on-primary-container": "#00424f",
+            "on-tertiary-fixed": "#002113",
+            "surface-bright": "#333945",
+            "on-primary": "#003640",
+            "on-secondary": "#00373a",
+            "inverse-on-surface": "#2b313c",
+            "inverse-primary": "#00687a",
+            "on-secondary-fixed-variant": "#004f53",
+            "on-background": "#dde2f1",
+            "surface": "#0e141e",
+            "tertiary-fixed": "#6ffbbe",
+            "secondary-fixed": "#6ff6ff",
+            "outline-variant": "#3d494c",
+            "background": "#0e141e",
+            "surface-container": "#1a202a",
+            "on-primary-fixed": "#001f26",
+            "primary-container": "#06b6d4",
+            "tertiary-fixed-dim": "#4edea3",
+            "secondary": "#dcfdff",
+            "on-surface-variant": "#bcc9cd",
+            "on-surface": "#dde2f1",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary": "#4edea3",
+            "on-error-container": "#ffdad6",
+            "on-tertiary": "#003824",
+            "tertiary-container": "#1bbd85",
+            "error": "#ffb4ab",
+            "secondary-fixed-dim": "#00dce6",
+            "on-secondary-fixed": "#002022",
+            "error-container": "#93000a",
+            "surface-dim": "#0e141e",
+            "on-error": "#690005"
+          },
+          fontFamily: {
+            "headline-lg-mobile": ["Sora", "sans-serif"],
+            "headline-lg": ["Sora", "sans-serif"],
+            "headline-md": ["Sora", "sans-serif"],
+            "headline-sm": ["Sora", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "label-sm": ["Geist", "sans-serif"],
+            "telemetry-mono": ["Geist", "monospace"]
+          },
+          fontSize: {
+            "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "500" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
+            "telemetry-mono": ["10px", { lineHeight: "12px", letterSpacing: "0.12em", fontWeight: "500" }]
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "margin-mobile": "1rem",
+            "margin": "1.5rem",
+            "gutter": "1rem",
+            "gutter-mobile": "0.75rem"
+          }
+        }
+      }
+    };
+  </script>
+  
+  <!-- Custom Styles -->
+  <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+  <!-- Navigation Overlay -->
+  <div id="nav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" onclick="closeMobileNav()"></div>
+  
+  <!-- Header with Navigation -->
+  <header class="sticky top-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/20">
+    <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin">
+      <div class="flex items-center justify-between h-14 md:h-16">
+        <!-- Logo and Name -->
+        <a href="index.html" class="flex items-center gap-space-sm">
+          <div class="w-8 h-8 md:w-10 md:h-10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
+              <defs>
+                <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00f2fe"/>
+                  <stop offset="100%" stop-color="#4facfe"/>
+                </linearGradient>
+                <linearGradient id="neuralCore" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#06b6d4"/>
+                  <stop offset="100%" stop-color="#10b981"/>
+                </linearGradient>
+              </defs>
+              <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="#080e18" stroke="url(#cyberGlow)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="22" fill="none" stroke="url(#neuralCore)" stroke-width="2.5" stroke-dasharray="6 4"/>
+              <polygon points="50,34 64,42 64,58 50,66 36,58 36,42" fill="url(#cyberGlow)" opacity="0.85"/>
+              <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+            </svg>
+          </div>
+          <div class="hidden sm:flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface">GEORGI DANCHEV</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-primary">AI AUTOMATION ENGINEER</span>
+          </div>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-space-lg">
+          <a href="index.html" class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-wider">Overview</a>
+          <a href="projects.html" class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-wider">Projects</a>
+          <a href="experience.html" class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-wider">Experience</a>
+          <a href="skills.html" class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-wider">Skills</a>
+          <a href="contact.html" class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-wider">Contact</a>
+        </nav>
+        
+        <!-- Status Indicator -->
+        <div class="hidden md:flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container-highest">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span class="font-telemetry-mono text-telemetry-mono text-primary font-bold">OPERATIONAL</span>
+        </div>
+        
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" class="md:hidden hamburger flex flex-col justify-center items-center w-10 h-10 gap-1.5" onclick="toggleMobileNav()">
+          <span class="hamburger-line w-6 h-0.5 bg-on-surface rounded"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-on-surface rounded"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-on-surface rounded"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav fixed top-14 right-0 w-64 h-[calc(100vh-3.5rem)] bg-surface-container-low border-l border-outline-variant/20 md:hidden z-50">
+      <div class="flex flex-col p-space-md gap-space-xs">
+        <a href="index.html" class="nav-link flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[18px]">home</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Overview</span>
+        </a>
+        <a href="projects.html" class="nav-link flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-high text-primary">
+          <span class="material-symbols-outlined text-[18px]">deployed_code</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Projects</span>
+        </a>
+        <a href="experience.html" class="nav-link flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[18px]">work</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Experience</span>
+        </a>
+        <a href="skills.html" class="nav-link flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[18px]">psychology</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Skills</span>
+        </a>
+        <a href="contact.html" class="nav-link flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-[18px]">contact_mail</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider">Contact</span>
+        </a>
+      </div>
+      
+      <!-- Mobile Status -->
+      <div class="absolute bottom-0 left-0 right-0 p-space-md border-t border-outline-variant/20">
+        <div class="flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-full bg-surface-container-highest">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span class="font-telemetry-mono text-telemetry-mono text-primary font-bold">SYSTEM OPERATIONAL</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-margin-mobile md:px-margin py-space-lg">
+    <!-- Page Header -->
+    <div class="flex flex-col gap-space-xs mb-space-lg">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          <span class="font-telemetry-mono text-telemetry-mono uppercase tracking-widest text-primary">PAGE 02 / 05 // DIRECTIVE: ARCHITECTURE & DEPLOYMENT</span>
+        </div>
+        <div class="bg-surface-container-high px-space-xs py-0.5 rounded text-on-surface-variant font-telemetry-mono text-telemetry-mono">
+          7 DEPLOYMENTS ACTIVE
+        </div>
+      </div>
+      
+      <!-- Page Progress Indicators -->
+      <div class="w-full grid grid-cols-5 gap-1.5 h-1 my-space-xs">
+        <div class="page-indicator bg-surface-container-highest rounded-full h-full"></div>
+        <div class="page-indicator bg-primary rounded-full h-full shadow-[0_0_8px_#4cd7f6]"></div>
+        <div class="page-indicator bg-surface-container-highest rounded-full h-full"></div>
+        <div class="page-indicator bg-surface-container-highest rounded-full h-full"></div>
+        <div class="page-indicator bg-surface-container-highest rounded-full h-full"></div>
+      </div>
+      
+      <div class="flex items-center justify-between text-on-surface-variant">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">NEURAL OPS PORTFOLIO</span>
+        <span class="font-telemetry-mono text-telemetry-mono text-tertiary">LATENCY: 14MS // SYNC OK</span>
+      </div>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="flex flex-col gap-space-lg">
+      
+      <!-- PROJECT 1: Transcription Tool -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden group">
+        <div class="absolute -right-16 -top-16 w-44 h-44 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-primary font-semibold">SYS.AI-01</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">PROD // MEETING INTELLIGENCE</span>
+          </div>
+          <div class="flex items-center gap-1 bg-tertiary/10 px-2 py-0.5 rounded text-tertiary">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">ONLINE</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Transcription Tool</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Long Meeting Insight Extraction</p>
+        </div>
+        
+        <!-- Highlights -->
+        <ul class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <li class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">mic</span>
+            <span>Extracts key insights, action items, and summaries from very long meeting recordings and transcripts.</span>
+          </li>
+          <li class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">history</span>
+            <span>Built when LLM models had limited context windows - implemented chunking and summarization strategies for hour-long meetings.</span>
+          </li>
+        </ul>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">DEPLOYED STACK</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">cloud</span>Azure OpenAI
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-tertiary text-[13px]">code</span>Python
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">description</span>Text Processing
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 2: LibreChat Enterprise -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden group">
+        <div class="absolute -right-16 -top-16 w-44 h-44 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-secondary-fixed font-semibold">SYS.AI-02</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">PROD // ENTERPRISE DECK</span>
+          </div>
+          <div class="flex items-center gap-1 bg-tertiary/10 px-2 py-0.5 rounded text-tertiary">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">ONLINE</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">LibreChat Enterprise</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Multi-Model Enterprise Chat Platform</p>
+        </div>
+        
+        <!-- Highlights -->
+        <ul class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <li class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">chat</span>
+            <span>Multi-model enterprise chat with Azure OpenAI integration, supporting various GPT models and configurations.</span>
+          </li>
+          <li class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">database</span>
+            <span>Integrated RAG capabilities for enterprise knowledge retrieval and contextual responses.</span>
+          </li>
+          <li class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">analytics</span>
+            <span>User activity tracking, usage analytics, and MCP protocol integrations for extended capabilities.</span>
+          </li>
+        </ul>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">DEPLOYED STACK & PROTOCOLS</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">cloud</span>Azure OpenAI
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">chat</span>LibreChat
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-secondary-container text-[13px]">cable</span>MCP Protocol
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-secondary-container text-[13px]">database</span>RAG Architecture
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-on-surface-variant text-[13px]">deployed_code</span>Docker
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 3: Ava with Copilot (DEPRECATED) -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden opacity-75">
+        <div class="absolute -right-16 -top-16 w-40 h-40 bg-outline/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-outline font-semibold">SYS.AI-03</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">COPILOT HUB</span>
+          </div>
+          <div class="flex items-center gap-1 bg-error/10 px-2 py-0.5 rounded text-error">
+            <span class="material-symbols-outlined text-[13px]">cancel</span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">DEPRECATED</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Ava with Copilot</h2>
+          <p class="font-label-md text-label-md text-outline mt-0.5">Microsoft Copilot Studio Conversational Agent</p>
+        </div>
+        
+        <!-- Highlights -->
+        <div class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0 mt-0.5">assistant</span>
+            <span>Built on Microsoft Copilot Studio platform with generative answers, multilingual flows, and enterprise integration.</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">ECOSYSTEM MATRIX</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-outline text-[13px]">assistant</span>Microsoft Copilot Studio
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-outline text-[13px]">robot_2</span>Azure Bot Framework
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 4: Ava with Langchain -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-40 h-40 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-tertiary font-semibold">SYS.AI-04</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">PROD // SERVERLESS AI</span>
+          </div>
+          <div class="flex items-center gap-1 bg-tertiary/10 px-2 py-0.5 rounded text-tertiary">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">ONLINE</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Ava with Langchain</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Python Langchain Conversational Agent</p>
+        </div>
+        
+        <!-- Highlights -->
+        <div class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-tertiary text-[16px] flex-shrink-0 mt-0.5">functions</span>
+            <span>Python Langchain implementation deployed as Azure Function App for serverless conversational AI.</span>
+          </div>
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">bolt</span>
+            <span>Scalable serverless architecture with LangChain chains and agents for flexible conversation flows.</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">TECHNOLOGY STACK</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-tertiary text-[13px]">code</span>Python
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">psychology</span>LangChain
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">functions</span>Azure Functions
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">cloud</span>Azure OpenAI
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 5: LightRAG -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-40 h-40 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-primary font-semibold">SYS.AI-05</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">PROD // KNOWLEDGE TOPOLOGY</span>
+          </div>
+          <div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-primary">
+            <span class="material-symbols-outlined text-[13px]">schema</span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">GRAPH RAG</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">LightRAG</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Graph-Based Knowledge Base for Ava</p>
+        </div>
+        
+        <!-- Highlights -->
+        <div class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">account_tree</span>
+            <span>Knowledge base powering Ava conversational agent with graph-based RAG architecture.</span>
+          </div>
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-tertiary text-[16px] flex-shrink-0 mt-0.5">hub</span>
+            <span>Combines knowledge graphs with vector embeddings for enhanced contextual accuracy and semantic navigation.</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">TECHNOLOGY STACK</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-tertiary text-[13px]">schema</span>Graph RAG
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">database</span>Vector Store
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-tertiary text-[13px]">code</span>Python
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 6: LightRAG Ingestion Tool -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-40 h-40 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-secondary-fixed font-semibold">SYS.AI-06</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">PROD // DATA SYNC</span>
+          </div>
+          <div class="flex items-center gap-1 bg-tertiary/10 px-2 py-0.5 rounded text-tertiary">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">AUTOMATED</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">LightRAG Ingestion Tool</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Automated Multi-Source Data Synchronization</p>
+        </div>
+        
+        <!-- Highlights -->
+        <div class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-secondary-container text-[16px] flex-shrink-0 mt-0.5">sync</span>
+            <span>Automated synchronization tool that ingests data from multiple sources into the LightRAG knowledge base.</span>
+          </div>
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">schedule</span>
+            <span>Scheduled ingestion pipelines keeping the knowledge graph current with latest enterprise data.</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">TECHNOLOGY STACK</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-tertiary text-[13px]">code</span>Python
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">sync</span>ETL Pipelines
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">schedule</span>Scheduled Jobs
+            </span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- PROJECT 7: Proora.ai -->
+      <article class="bg-surface-container-low rounded-xl p-space-md shadow-md relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-40 h-40 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Top HUD Ribbon -->
+        <div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+          <div class="flex items-center gap-space-xs">
+            <span class="bg-surface-container px-2 py-0.5 rounded font-telemetry-mono text-telemetry-mono text-tertiary font-semibold">SYS.AI-07</span>
+            <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase">SIDE PROJECT</span>
+          </div>
+          <div class="flex items-center gap-1 bg-primary/10 px-2 py-0.5 rounded text-primary">
+            <span class="material-symbols-outlined text-[13px]">lightbulb</span>
+            <span class="font-telemetry-mono text-telemetry-mono uppercase">PERSONAL</span>
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="flex flex-col mb-space-sm relative z-10">
+          <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Proora.ai</h2>
+          <p class="font-label-md text-label-md text-primary mt-0.5">Cashier System for NGOs & Condominiums</p>
+        </div>
+        
+        <!-- Highlights -->
+        <div class="flex flex-col gap-space-xs mb-space-md relative z-10">
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-tertiary text-[16px] flex-shrink-0 mt-0.5">payments</span>
+            <span>Side project building a modern cashier and financial management system tailored for NGOs and condominium associations.</span>
+          </div>
+          <div class="flex items-start gap-2 bg-surface-container/60 p-2.5 rounded-lg text-on-surface font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">groups</span>
+            <span>Simplified financial tracking, member management, and reporting for community organizations.</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-col gap-space-xs relative z-10">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant uppercase tracking-widest">TECHNOLOGY STACK</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">web</span>Web Application
+            </span>
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-primary text-[13px]">payments</span>Financial Tools
+            </span>
+          </div>
+        </div>
+      </article>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-outline-variant/20 mt-space-xl">
+    <div class="max-w-6xl mx-auto px-margin-mobile md:px-margin py-space-md">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-space-sm">
+        <div class="flex items-center gap-space-sm">
+          <span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant">© 2024 GEORGI DANCHEV</span>
+          <span class="w-1 h-1 rounded-full bg-outline"></span>
+          <span class="font-telemetry-mono text-telemetry-mono text-primary">NEURAL HUD TELEMETRY v5.4</span>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <a href="https://github.com/geodanchev" target="_blank" rel="noopener noreferrer" class="font-telemetry-mono text-telemetry-mono text-on-surface-variant hover:text-primary transition-colors">GITHUB</a>
+          <a href="https://linkedin.com/in/georgidanchev" target="_blank" rel="noopener noreferrer" class="font-telemetry-mono text-telemetry-mono text-on-surface-variant hover:text-primary transition-colors">LINKEDIN</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
